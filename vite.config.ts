@@ -26,32 +26,7 @@ function engineVersion(): string {
   }
 }
 
-const SUPPORTED_LANGUAGES = [
-  'en',
-  'ar',
-  'be',
-  'da',
-  'ru',
-  'de',
-  'es',
-  'fr',
-  'id',
-  'it',
-  'nl',
-  'pt',
-  'pl',
-  'sv',
-  'tr',
-  'vi',
-  'zh',
-  'zh-TW',
-  'ko',
-  'ja',
-  'uk',
-  'sk',
-  'ca',
-  'fa',
-] as const;
+const SUPPORTED_LANGUAGES = ['en', 'pt'] as const;
 const LANG_REGEX = new RegExp(
   `^/(${SUPPORTED_LANGUAGES.join('|')})(?:/(.*))?$`
 );
@@ -550,10 +525,10 @@ export default defineConfig(() => {
         partialDirectory: resolve(__dirname, 'src/partials'),
         context: {
           baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
-          simpleMode: process.env.SIMPLE_MODE === 'true',
-          brandName: process.env.VITE_BRAND_NAME || '',
-          brandLogo: process.env.VITE_BRAND_LOGO || '',
-          footerText: process.env.VITE_FOOTER_TEXT || '',
+          simpleMode: 'true',
+          brandName: 'Conab',
+          brandLogo: 'images/conab.svg',
+          footerText: 'Conab, Companhia Nacional de Abastecimento',
           appVersion: process.env.npm_package_version || 'Unknown',
         },
       }),
