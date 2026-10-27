@@ -1,10 +1,34 @@
+:root {
+  /* Conab brand: blue #003575, green #5ba51e */
+
+  /* Text */
+  --bm-text: #003575;
+  --bm-tooltip-text: #ffffff;
+
+  /* Accent */
+  --bm-accent: #5ba51e;
+  --bm-accent-soft: rgba(91, 165, 30, 0.12);
+
+  /* Surfaces */
+  --bm-surface: #ffffff;
+  --bm-overlay: rgba(0, 53, 117, 0.45);
+  --bm-tooltip-bg: rgba(0, 53, 117, 0.88);
+
+  /* Lines */
+  --bm-line: #dbe5f0;
+
+  /* Shadows */
+  --bm-shadow-modal: rgba(0, 53, 117, 0.3);
+  --bm-shadow-marker: rgba(0, 53, 117, 0.3);
+}
+
 body {
-  color: #383838;
+  color: var(--bm-text);
 }
 
 .sortable-ghost {
   opacity: 0.4;
-  border: 2px dashed #2b7fff;
+  border: 2px dashed var(--bm-accent);
 }
 .sortable-drag {
   cursor: move;
@@ -16,7 +40,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--bm-overlay);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +49,7 @@ body {
 }
 
 .modal-content {
-  background: white;
+  background: var(--bm-surface);
   border-radius: 0.5rem;
   max-width: 500px;
   width: 100%;
@@ -39,7 +63,7 @@ body {
   right: 1rem;
   max-width: 350px;
   max-height: none;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 40px var(--bm-shadow-modal);
   z-index: 1001;
 }
 
@@ -56,7 +80,7 @@ body {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: #e5e7eb;
+  background: var(--bm-line);
 }
 
 .child-container > li {
@@ -70,12 +94,12 @@ body {
   top: 1.25rem;
   width: 0.75rem;
   height: 2px;
-  background: #e5e7eb;
+  background: var(--bm-line);
 }
 
 .style-preview {
   padding: 0.5rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--bm-line);
   border-radius: 0.25rem;
   min-height: 2.5rem;
   display: flex;
@@ -94,7 +118,7 @@ body {
 }
 
 .destination-marker svg {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 2px 4px var(--bm-shadow-marker));
 }
 
 .pdf-canvas-wrapper {
@@ -108,8 +132,8 @@ body {
 
 .coordinate-tooltip {
   position: absolute;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
+  background: var(--bm-tooltip-bg);
+  color: var(--bm-tooltip-text);
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
@@ -124,8 +148,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(59, 130, 246, 0.1);
-  border: 2px solid #3b82f6;
+  background: var(--bm-accent-soft);
+  border: 2px solid var(--bm-accent);
   pointer-events: none;
   z-index: 5;
 }

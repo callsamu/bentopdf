@@ -1,18 +1,30 @@
 body.lp {
-  --lp-bg: #222222;
-  --lp-bg-2: #2a2a2a;
-  --lp-bg-3: #383838;
-  --lp-well: #222222;
-  --lp-line: rgba(255, 255, 255, 0.1);
-  --lp-line-2: rgba(255, 255, 255, 0.2);
-  --lp-text: #f3f3f1;
-  --lp-text-2: #b4b4b0;
-  --lp-dim: #8d8d89;
-  --lp-accent: #6366f1;
-  --lp-accent-hover: #4f46e5;
-  --lp-accent-2: #818cf8;
-  --lp-accent-3: #a5b4fc;
-  --lp-white: #f4f4f1;
+  /* Conab brand: blue #003575, green #5ba51e */
+
+  /* Surfaces */
+  --lp-bg: #f3f7fb;
+  --lp-bg-2: #ffffff;
+  --lp-bg-3: #dbe5f0;
+  --lp-well: #e8eff7;
+
+  /* Lines */
+  --lp-line: rgba(0, 53, 117, 0.12);
+  --lp-line-2: rgba(0, 53, 117, 0.24);
+
+  /* Text */
+  --lp-text: #003575;
+  --lp-text-2: #3f5a7d;
+  --lp-dim: #6f87a5;
+
+  /* Accent: Conab green (2 and 3 are darker so they work as text on light) */
+  --lp-accent: #5ba51e;
+  --lp-accent-hover: #478a14;
+  --lp-accent-2: #4d9419;
+  --lp-accent-3: #3b7a12;
+
+  /* Emphasis surface (solid Conab blue) */
+  --lp-white: #003575;
+
   --lp-display: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
   --lp-mono:
     ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
@@ -22,8 +34,8 @@ body.lp {
 }
 
 body.lp ::selection {
-  background: rgba(99, 102, 241, 0.45);
-  color: #fff;
+  background: rgba(91, 165, 30, 0.3);
+  color: #003575;
 }
 
 .lp-frame {
@@ -54,7 +66,7 @@ body.lp ::selection {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(34, 34, 34, 0.86);
+  background: rgba(243, 247, 251, 0.86);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--lp-line);
@@ -107,14 +119,14 @@ body.lp ::selection {
 
 .lp-nav-links a:hover {
   color: var(--lp-text);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 53, 117, 0.06);
 }
 
 .lp-nav-fill {
   flex: 1;
   background-image: repeating-linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.045) 0 1px,
+    rgba(0, 53, 117, 0.055) 0 1px,
     transparent 1px 10px
   );
 }
@@ -144,8 +156,8 @@ body.lp ::selection {
 }
 
 .lp-nav-gh:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(0, 53, 117, 0.06);
+  border-color: rgba(0, 53, 117, 0.4);
 }
 
 .lp-nav-gh svg {
@@ -273,8 +285,8 @@ body.lp ::selection {
 }
 
 .lp-pill-btn--ghost:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(0, 53, 117, 0.06);
+  border-color: rgba(0, 53, 117, 0.4);
 }
 
 .lp-btn {
@@ -316,7 +328,7 @@ body.lp ::selection {
 .lp-btn--primary {
   background: var(--lp-accent);
   color: #fff;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .lp-btn--primary:hover {
@@ -330,8 +342,8 @@ body.lp ::selection {
 }
 
 .lp-btn--ghost:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(0, 53, 117, 0.05);
+  border-color: rgba(0, 53, 117, 0.4);
 }
 
 .lp-btn--ghost svg {
@@ -353,6 +365,7 @@ body.lp ::selection {
 }
 
 .lp-cross::after {
+  --lp-cross: rgba(0, 53, 117, 0.4);
   content: '';
   position: absolute;
   inset: -5px;
@@ -360,14 +373,14 @@ body.lp ::selection {
   pointer-events: none;
   background-repeat: no-repeat;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+    linear-gradient(var(--lp-cross), var(--lp-cross)),
+    linear-gradient(var(--lp-cross), var(--lp-cross)),
+    linear-gradient(var(--lp-cross), var(--lp-cross)),
+    linear-gradient(var(--lp-cross), var(--lp-cross)),
+    linear-gradient(var(--lp-cross), var(--lp-cross)),
+    linear-gradient(var(--lp-cross), var(--lp-cross)),
+    linear-gradient(var(--lp-cross), var(--lp-cross)),
+    linear-gradient(var(--lp-cross), var(--lp-cross));
   background-size:
     11px 1px,
     1px 11px,
@@ -506,7 +519,7 @@ body.lp ::selection {
   border-radius: 0.18em;
   background: var(--lp-accent);
   color: #fff;
-  box-shadow: 0 0.2em 0.6em rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0.2em 0.6em rgba(0, 53, 117, 0.25);
   transform: rotate(-6deg);
 }
 
@@ -522,7 +535,7 @@ body.lp ::selection {
   pointer-events: none;
   background: radial-gradient(
     50% 42% at 50% 0%,
-    rgba(99, 102, 241, 0.16),
+    rgba(91, 165, 30, 0.16),
     transparent 70%
   );
 }
@@ -559,7 +572,7 @@ body.lp ::selection {
   position: absolute;
   width: 56px;
   height: 56px;
-  background: rgba(255, 255, 255, 0.045);
+  background: rgba(0, 53, 117, 0.05);
 }
 
 .lp-hero-bg i:nth-child(1) {
@@ -585,7 +598,7 @@ body.lp ::selection {
 .lp-hero-bg i:nth-child(5) {
   left: calc(50% - 28px - 168px);
   top: 392px;
-  background: rgba(99, 102, 241, 0.16);
+  background: rgba(91, 165, 30, 0.18);
 }
 
 .lp-hero-bg i:nth-child(6) {
@@ -606,7 +619,7 @@ body.lp ::selection {
 .lp-hero-bg i:nth-child(9) {
   left: calc(50% - 28px - 56px);
   top: 0;
-  background: rgba(255, 255, 255, 0.025);
+  background: rgba(0, 53, 117, 0.03);
 }
 
 .lp-hero-bg i:nth-child(10) {
@@ -674,11 +687,11 @@ body.lp ::selection {
 }
 
 .lp-check:nth-child(2) svg {
-  color: #6ee7b7;
+  color: #2f6db5;
 }
 
 .lp-check:nth-child(3) svg {
-  color: #fcd34d;
+  color: #c98a00;
 }
 
 @media (max-width: 639px) {
@@ -755,7 +768,7 @@ body.lp ::selection {
   justify-content: center;
   min-height: 88px;
   background: var(--lp-bg);
-  color: #8e8e97;
+  color: #7a8fa8;
   transition:
     color 0.25s,
     background-color 0.25s;
@@ -866,20 +879,20 @@ body.lp ::selection {
 }
 
 .lp-cell--raised:hover {
-  background-color: #3e3e40;
+  background-color: #cddbea;
 }
 
 .lp-cell--hatch {
   background-image: repeating-linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.06) 0 1px,
+    rgba(0, 53, 117, 0.06) 0 1px,
     transparent 1px 10px
   );
 }
 
 .lp-cell--dots {
   background-image: radial-gradient(
-    rgba(255, 255, 255, 0.16) 1px,
+    rgba(0, 53, 117, 0.18) 1px,
     transparent 1.5px
   );
   background-size: 16px 16px;
@@ -905,26 +918,27 @@ body.lp ::selection {
 
 .lp-cell--accent p,
 .lp-cell--accent span {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.88);
 }
 
+/* "White" cell is now the solid Conab blue emphasis cell */
 .lp-cell--white,
 .lp-band .lp-cell--white {
   background: var(--lp-white);
 }
 
 .lp-cell--white:hover {
-  background-color: #fff;
+  background-color: #002a5c;
 }
 
 .lp-cell--white h3,
 .lp-cell--white b {
-  color: #09090b;
+  color: #fff;
 }
 
 .lp-cell--white p,
 .lp-cell--white span {
-  color: #52525b;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .lp-num-wrap {
@@ -947,12 +961,12 @@ body.lp ::selection {
 
 .lp-cell--accent .lp-num {
   background: #fff;
-  color: var(--lp-accent);
+  color: var(--lp-accent-hover);
 }
 
 .lp-cell--white .lp-num {
-  background: #09090b;
-  color: #fff;
+  background: #fff;
+  color: #003575;
 }
 
 .lp-badge {
@@ -1101,7 +1115,7 @@ body.lp ::selection {
   padding: 0 150px 0 46px;
   border: 1px solid var(--lp-line-2);
   border-radius: 6px;
-  background: var(--lp-well);
+  background: var(--lp-bg-2);
   font-family: inherit;
   font-size: 15px;
   color: var(--lp-text);
@@ -1112,12 +1126,12 @@ body.lp ::selection {
 }
 
 .lp-input::placeholder {
-  color: #71717a;
+  color: #7d93ad;
 }
 
 .lp-input:focus {
   border-color: var(--lp-accent);
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
+  box-shadow: 0 0 0 4px rgba(91, 165, 30, 0.2);
 }
 
 .lp-search-right {
@@ -1160,7 +1174,7 @@ body.lp ::selection {
 
 .lp-icon-btn:hover {
   color: var(--lp-text);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(0, 53, 117, 0.07);
 }
 
 .lp-icon-btn svg {
@@ -1179,31 +1193,31 @@ body.lp ::selection {
 }
 
 .lp #tool-grid {
-  --tile-fg: #a5b4fc;
+  --tile-fg: #478a14;
 }
 
 .lp #tool-grid > .is-cat-edit-annotate {
-  --tile-fg: #d6c285;
+  --tile-fg: #b8860b;
 }
 
 .lp #tool-grid > .is-cat-convert-to-pdf {
-  --tile-fg: #79c4cb;
+  --tile-fg: #0e7f8c;
 }
 
 .lp #tool-grid > .is-cat-convert-from-pdf {
-  --tile-fg: #b8aade;
+  --tile-fg: #6b4fb0;
 }
 
 .lp #tool-grid > .is-cat-organize-manage {
-  --tile-fg: #8dacda;
+  --tile-fg: #2f62a8;
 }
 
 .lp #tool-grid > .is-cat-optimize-repair {
-  --tile-fg: #89cca8;
+  --tile-fg: #2e8b57;
 }
 
 .lp #tool-grid > .is-cat-secure-pdf {
-  --tile-fg: #dea3a3;
+  --tile-fg: #c0504d;
 }
 
 .lp .category-group {
@@ -1221,7 +1235,7 @@ body.lp ::selection {
   gap: 14px;
   margin: 0 0 22px;
   padding: 12px 2px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(0, 53, 117, 0.1);
   font-family: var(--lp-display);
   font-size: 20px;
   font-weight: 600;
@@ -1250,7 +1264,7 @@ body.lp ::selection {
   background-color: var(--lp-well);
   background-image: repeating-linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.05) 0 1px,
+    rgba(0, 53, 117, 0.05) 0 1px,
     transparent 1px 10px
   );
 }
@@ -1438,7 +1452,7 @@ body.lp ::selection {
   pointer-events: none;
   background: radial-gradient(
     60% 70% at 50% 110%,
-    rgba(99, 102, 241, 0.28),
+    rgba(91, 165, 30, 0.24),
     transparent 70%
   );
 }
@@ -1606,13 +1620,14 @@ body.lp ::selection {
 .lp #scroll-to-top-btn {
   border: 1px solid var(--lp-line-2);
   border-radius: 6px;
-  background: var(--lp-bg-3);
+  background: var(--lp-bg-2);
   color: var(--lp-text);
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 12px 30px -10px rgba(0, 53, 117, 0.3);
 }
 
 .lp #scroll-to-top-btn:hover {
   background: var(--lp-accent);
+  color: #fff;
   border-color: transparent;
 }
 
@@ -1676,15 +1691,15 @@ body.lp ::selection {
 }
 
 .lp-stat.lp-cell--white b {
-  color: #09090b;
+  color: #fff;
 }
 
 .lp-stat.lp-cell--white span {
-  color: #52525b;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .lp-stat.lp-cell--accent span {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .lp-manifesto {
@@ -1799,7 +1814,7 @@ body.lp ::selection {
 }
 
 .lp .lp-cell--raised.lp-stat-link:hover {
-  background-color: #3e3e40;
+  background-color: #cddbea;
 }
 
 .lp-stat-link:hover span {
@@ -1814,7 +1829,7 @@ body.lp ::selection {
 .lp-story-body a {
   color: var(--lp-accent-3);
   text-decoration: underline;
-  text-decoration-color: rgba(165, 180, 252, 0.4);
+  text-decoration-color: rgba(59, 122, 18, 0.4);
   text-underline-offset: 4px;
   transition:
     color 0.2s,
@@ -1828,24 +1843,24 @@ body.lp ::selection {
 }
 
 .lp #shortcuts-modal {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 53, 117, 0.35);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 
 .lp #shortcuts-modal > div {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 53, 117, 0.12);
   border-radius: 12px;
-  background: rgb(45, 45, 45);
+  background: #ffffff;
   box-shadow:
-    0 0 0 0.5px rgba(0, 0, 0, 0.12),
-    0 24px 60px rgba(0, 0, 0, 0.35),
-    0 8px 20px rgba(0, 0, 0, 0.2);
+    0 0 0 0.5px rgba(0, 53, 117, 0.12),
+    0 24px 60px rgba(0, 53, 117, 0.25),
+    0 8px 20px rgba(0, 53, 117, 0.12);
 }
 
 .lp #shortcuts-modal > div > div:first-child {
   padding: 16px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(0, 53, 117, 0.08);
 }
 
 .lp #shortcuts-modal h3 {
@@ -1873,7 +1888,7 @@ body.lp ::selection {
 }
 
 .lp #close-shortcuts-modal:hover {
-  background: rgba(255, 255, 255, 0.11);
+  background: rgba(0, 53, 117, 0.08);
   color: var(--lp-text);
 }
 
@@ -1886,10 +1901,10 @@ body.lp ::selection {
   gap: 4px;
   margin: 14px 20px 0;
   padding: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 53, 117, 0.08);
+  border-bottom: 1px solid rgba(0, 53, 117, 0.08);
   border-radius: 10px;
-  background: rgb(34, 34, 34);
+  background: var(--lp-well);
 }
 
 .lp #shortcuts-tab-btn,
@@ -1931,7 +1946,7 @@ body.lp ::selection {
   height: 38px;
   border: 1px solid var(--lp-line-2);
   border-radius: 8px;
-  background: rgb(34, 34, 34);
+  background: var(--lp-bg);
   font-size: 13.5px;
   color: var(--lp-text);
   transition:
@@ -1941,7 +1956,7 @@ body.lp ::selection {
 
 .lp #shortcut-search:focus {
   border-color: var(--lp-accent);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+  box-shadow: 0 0 0 3px rgba(91, 165, 30, 0.2);
   outline: none;
 }
 
@@ -1951,9 +1966,9 @@ body.lp ::selection {
 
 .lp #shortcuts-tab-content > div:nth-child(2) {
   padding: 12px 14px;
-  border: 1px solid rgba(129, 140, 248, 0.25);
+  border: 1px solid rgba(91, 165, 30, 0.3);
   border-radius: 10px;
-  background: rgba(99, 102, 241, 0.08);
+  background: rgba(91, 165, 30, 0.08);
 }
 
 .lp #shortcuts-tab-content > div:nth-child(2) p {
@@ -1963,7 +1978,7 @@ body.lp ::selection {
 }
 
 .lp #shortcuts-tab-content > div:nth-child(2) .text-yellow-300 {
-  color: #fcd34d;
+  color: #b7791f;
 }
 
 .lp #shortcuts-list .category-section h3 {
@@ -1976,17 +1991,17 @@ body.lp ::selection {
 
 .lp #shortcuts-list .shortcut-item {
   padding: 10px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 53, 117, 0.08);
   border-radius: 10px;
-  background: rgb(34, 34, 34);
+  background: var(--lp-bg);
   transition:
     background-color 0.15s,
     border-color 0.15s;
 }
 
 .lp #shortcuts-list .shortcut-item:hover {
-  background: rgba(255, 255, 255, 0.11);
-  border-color: rgba(255, 255, 255, 0.06);
+  background: var(--lp-bg-3);
+  border-color: rgba(0, 53, 117, 0.08);
 }
 
 .lp #shortcuts-list .shortcut-item i.ph {
@@ -2005,14 +2020,14 @@ body.lp ::selection {
   height: 30px;
   border: 1px solid var(--lp-line-2);
   border-radius: 6px;
-  background: rgb(45, 45, 45);
+  background: #ffffff;
   font-size: 12px;
   color: var(--lp-text);
 }
 
 .lp #shortcuts-list .shortcut-input:focus {
   border-color: var(--lp-accent);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+  box-shadow: 0 0 0 3px rgba(91, 165, 30, 0.2);
 }
 
 .lp #preferences-tab-content h4 {
@@ -2024,9 +2039,9 @@ body.lp ::selection {
 
 .lp #preferences-tab-content .bg-gray-900 {
   padding: 14px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 53, 117, 0.08);
   border-radius: 10px;
-  background: rgb(34, 34, 34);
+  background: var(--lp-bg);
 }
 
 .lp #preferences-tab-content .bg-gray-900 label:first-child,
@@ -2042,8 +2057,8 @@ body.lp ::selection {
 }
 
 .lp #preferences-tab-content a.bg-gray-900:hover {
-  background: rgba(255, 255, 255, 0.11);
-  border-color: rgba(129, 140, 248, 0.4);
+  background: var(--lp-bg-3);
+  border-color: rgba(91, 165, 30, 0.45);
 }
 
 .lp #preferences-tab-content a.bg-gray-900:hover svg {
@@ -2051,7 +2066,7 @@ body.lp ::selection {
 }
 
 .lp #shortcuts-modal input.peer:not(:checked) + div {
-  background-color: #3d3d3f;
+  background-color: #bfcfe0;
 }
 
 .lp #shortcuts-modal input.peer:checked + div {
@@ -2060,7 +2075,7 @@ body.lp ::selection {
 
 .lp #shortcuts-modal > div > div:last-child {
   padding: 14px 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(0, 53, 117, 0.08);
   border-radius: 0 0 14px 14px;
   background: transparent;
 }
@@ -2081,7 +2096,7 @@ body.lp ::selection {
 
 .lp #import-shortcuts-btn:hover,
 .lp #export-shortcuts-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(0, 53, 117, 0.07);
   color: var(--lp-text);
 }
 
@@ -2094,19 +2109,19 @@ body.lp ::selection {
 .lp #reset-shortcuts-btn {
   height: 32px;
   padding: 0 12px;
-  border: 1px solid rgba(244, 63, 94, 0.35);
+  border: 1px solid rgba(192, 57, 43, 0.4);
   border-radius: 7px;
   font-size: 12.5px;
   font-weight: 600;
-  color: #fda4af;
+  color: #c0392b;
   transition:
     background-color 0.15s,
     color 0.15s;
 }
 
 .lp #reset-shortcuts-btn:hover {
-  background: rgba(244, 63, 94, 0.14);
-  color: #fecdd3;
+  background: rgba(192, 57, 43, 0.1);
+  color: #a52a1f;
 }
 
 .lp-cell.lp-stat:hover,
