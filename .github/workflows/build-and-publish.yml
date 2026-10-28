@@ -67,7 +67,7 @@ jobs:
       matrix:
         mode:
           - name: default
-            simple_mode: false
+            simple_mode: true
             suffix: ""
     steps:
       - name: Checkout code
@@ -132,7 +132,7 @@ jobs:
       matrix:
         mode:
           - name: default
-            simple_mode: false
+            simple_mode: true
             suffix: ""
     steps:
       - name: Checkout code
