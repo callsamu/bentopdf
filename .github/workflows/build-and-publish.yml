@@ -3,7 +3,7 @@ name: Build and Push Docker Images (Default + Simple Mode)
 on:
   push:
     branches:
-      - "main"
+      - "custom"
     tags:
       - "v*"
   workflow_dispatch:
@@ -12,7 +12,7 @@ jobs:
   # New job to build dist and create release
   build-and-release:
     runs-on: ubuntu-latest
-    if: github.repository == 'alam00000/bentopdf' && startsWith(github.ref, 'refs/tags/')
+    if: github.repository == 'callsamu/bentopdf' && startsWith(github.ref, 'refs/tags/')
     permissions:
       contents: write
     env:
@@ -59,7 +59,7 @@ jobs:
   # Build each platform natively in parallel, then merge manifests
   build-amd64:
     runs-on: ubuntu-latest
-    if: github.repository == 'alam00000/bentopdf'
+    if: github.repository == 'callsamu/bentopdf'
     permissions:
       contents: read
       packages: write
@@ -69,9 +69,6 @@ jobs:
           - name: default
             simple_mode: false
             suffix: ""
-          - name: simple
-            simple_mode: true
-            suffix: "-simple"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -137,9 +134,6 @@ jobs:
           - name: default
             simple_mode: false
             suffix: ""
-          - name: simple
-            simple_mode: true
-            suffix: "-simple"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -205,8 +199,6 @@ jobs:
         mode:
           - name: default
             suffix: ""
-          - name: simple
-            suffix: "-simple"
     steps:
       - name: Login to GitHub Container Registry
         uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3.7.0
@@ -269,8 +261,6 @@ jobs:
         mode:
           - name: default
             suffix: ""
-          - name: simple
-            suffix: "-simple"
     steps:
       - name: Login to GitHub Container Registry
         uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3.7.0
